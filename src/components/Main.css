@@ -5,3 +5,13 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+@media (max-width: 1300px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+}

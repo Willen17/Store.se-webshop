@@ -12,8 +12,12 @@ class SectionCard extends Component {
   }
   render() {
     return (
-      <div>
-        <p>section</p>
+      <div className="section-card">
+        <img
+          src="https://genesis-zone.com/media/cache/genesis_menu_product/Z23517_91075.png"
+          alt="headphones"
+        />
+        <p>product</p>
       </div>
     );
   }
