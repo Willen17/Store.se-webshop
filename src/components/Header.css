@@ -1,0 +1,29 @@
+header {
+  text-transform: uppercase;
+  background-color: #fce89f;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  color: #354f6b;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 900;
+}
+
+.logo {
+  margin-left: 2rem;
+  color: #354f6b;
+  font-size: 2rem;
+}
