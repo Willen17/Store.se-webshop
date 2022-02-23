@@ -1,15 +1,22 @@
 footer {
   width: 100%;
-  background-color: #fce89f;
+  background-color:#FCEE96;
   display: flex;
   flex-direction: column;
-  height: 5%;
+  height: 3rem;
   align-items: center;
   justify-content: center;
 }
 
 h1 {
-  color: #354f6b;
+  color: #4D5264;
   font-size: 1rem;
   font-weight: 500;
+}
+
+@media (max-width: 450px) {
+h1 {
+  font-size: 0.7rem;
+}
+
 }

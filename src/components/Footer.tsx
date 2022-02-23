@@ -3,7 +3,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="Footer">
+    <footer>
       <h1>© William Saar | Erik Matsegård | Love Lanai</h1>
     </footer>
   );
