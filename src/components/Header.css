@@ -1,6 +1,6 @@
 header {
   text-transform: uppercase;
-  background-color: #fce89f;
+  background-color: #FCEE96;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,7 @@ header {
 }
 
 .title {
-  color: #354f6b;
+  color: #4D5264;
   font-size: 2rem;
   letter-spacing: 0.2rem;
   font-weight: 900;
@@ -23,6 +23,30 @@ header {
 
 .logo {
   margin-left: 2rem;
-  color: #354f6b;
+  color: #4D5264;
   font-size: 2rem;
+}
+
+@media (max-width: 580px) {
+.title {
+  font-size: 1.5rem;
+}
+
+.logo {
+  margin-left: 1.5rem;
+  font-size: 1.5rem;
+}
+
+}
+
+@media (max-width: 470px) {
+.title {
+  font-size: 1rem;
+}
+
+.logo {
+  margin-left: 1.5rem;
+  font-size: 1rem;
+}
+
 }

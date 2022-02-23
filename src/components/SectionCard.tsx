@@ -14,7 +14,7 @@ interface Props {
 function SectionCard(props: Props) {
   return (
     <div className="davidStyle">
-      <div className="frame">
+      <div className="product-container">
         <img className="img" src={props.src} alt={props.alt} />
         {/* <i
           onClick={props.onToggleLiked}
