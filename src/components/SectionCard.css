@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: .2rem;
+    margin: 1rem;
     background-color: beige;
     border-radius: .5rem;
     width: 600px;
@@ -26,6 +26,8 @@
  object-fit: cover;
   width: 25rem;
   border: 1rem ridge rgba(202,138,68,0.33);;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
   /* border: 50px solid transparent;
   border-image-source: url(https://s-media-cache-ak0.pinimg.com/236x/62/4a/b7/624ab7b6fc84f5079237532406ce388f.jpg);
   border-image-slice: 46 49;
@@ -34,7 +36,7 @@
 
 .product-container{
         /* border: 1px solid #ccc; */
-        background: #eee;
+        background: transparent;
         margin: auto;
         padding: 15px 10px;
         display: flex;
@@ -80,6 +82,59 @@
   transform: scale(1.1);
 }
 
+
+.card-price {
+	display: inline-block;
+  
+  width: auto;
+	height: 38px;
+	
+	background-color: #6ab070;
+	-webkit-border-radius: 3px 4px 4px 3px;
+	-moz-border-radius: 3px 4px 4px 3px;
+	border-radius: 3px 4px 4px 3px;
+	
+	border-left: 1px solid #6ab070;
+
+	/* This makes room for the triangle */
+	margin-left: 19px;
+	
+	position: relative;
+	
+	color: white;
+	font-weight: 300;
+	font-size: 22px;
+	line-height: 38px;
+
+	padding: 0 10px 0 10px;
+}
+
+/* Makes the triangle */
+.card-price:before {
+	content: "";
+	position: absolute;
+	display: block;
+	left: -19px;
+	width: 0;
+	height: 0;
+	border-top: 19px solid transparent;
+	border-bottom: 19px solid transparent;
+	border-right: 19px solid #6ab070;
+}
+
+/* Makes the circle */
+.card-price:after {
+	content: "";
+	background-color: white;
+	border-radius: 50%;
+	width: 4px;
+	height: 4px;
+	display: block;
+	position: absolute;
+	left: -9px;
+	top: 17px;
+}
+
 @media (max-width: 610px) {
   .davidStyle {
     max-width: 500px;
@@ -103,9 +158,6 @@
   .icons-container {
   flex-direction: unset;
   justify-content: space-between;
-
-  
-
 }
 }
 

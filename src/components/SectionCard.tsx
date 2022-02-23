@@ -5,13 +5,16 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
-  isLiked: boolean;
   src: string;
   alt: string;
-  onToggleLiked: () => void;
+  id: string;
+  addToCart: () => void;
+  randomPrice: number;
 }
 
 function SectionCard(props: Props) {
+  const ShoppingCart: string[] = [];
+
   return (
     <div className="davidStyle">
       <div className="product-container">
@@ -22,7 +25,13 @@ function SectionCard(props: Props) {
         ></i> */}
         <div className="icons-container">
           <FontAwesomeIcon className="info-icon" icon={faCircleInfo} />
-          <FontAwesomeIcon className="add-to-cart" icon={faCartPlus} />
+          <p className="card-price">{props.randomPrice}:-</p>
+          <FontAwesomeIcon
+            className="add-to-cart"
+            icon={faCartPlus}
+            // onClick={addToCart(props.id)}
+            onClick={props.addToCart}
+          />
         </div>
       </div>
     </div>

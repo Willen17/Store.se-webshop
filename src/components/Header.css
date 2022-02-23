@@ -6,6 +6,7 @@ header {
   align-items: center;
 }
 
+
 .titleContainer {
   display: flex;
   align-items: center;
@@ -19,7 +20,9 @@ header {
   font-size: 2rem;
   letter-spacing: 0.2rem;
   font-weight: 900;
+  cursor: pointer;
 }
+
 
 .logo {
   margin-left: 2rem;
@@ -37,6 +40,11 @@ header {
   font-size: 1.5rem;
 }
 
+.cart {
+  margin-right: 1.5rem;
+  font-size: 1.5rem;
+}
+
 }
 
 @media (max-width: 470px) {
@@ -46,6 +54,11 @@ header {
 
 .logo {
   margin-left: 1.5rem;
+  font-size: 1rem;
+}
+
+.cart {
+  margin-right: 1.5rem;
   font-size: 1rem;
 }
 
