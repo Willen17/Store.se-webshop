@@ -2,6 +2,8 @@ import { Component } from "react";
 import SectionCard from "./SectionCard";
 import "./Main.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { Link, Outlet } from "react-router-dom";
 
 interface ImageData {
   id: string;
@@ -19,13 +21,13 @@ interface ImageData {
 interface Props {}
 interface State {
   imagesData: ImageData[];
-  likedImages: string[];
+  shoppingCart: string[];
 }
 
 class Main extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = { imagesData: [], likedImages: [] };
+    this.state = { imagesData: [], shoppingCart: [] };
   }
 
   async componentDidMount() {
@@ -39,41 +41,67 @@ class Main extends Component<Props, State> {
     const imagesData: ImageData[] = (await response.json()).results;
 
     // Fetch liked images from LS
-    const likedImages = JSON.parse(localStorage.likedImages || "[]");
+    // const shoppingCart = JSON.parse(localStorage.shoppingCart || "[]");
+    const shoppingCart: string[] = [];
 
-    this.setState({ imagesData, likedImages });
+    this.setState({ imagesData, shoppingCart: shoppingCart });
   }
 
-  toggleLikedImage(id: string) {
-    const { likedImages } = this.state;
+  // toggleLikedImage(id: string) {
+  //   const { shoppingCart: shoppingCart } = this.state;
 
-    // Remove/Copy
-    const newList = likedImages.filter((imageId) => imageId !== id);
+  //   // Remove/Copy
+  //   const newList = shoppingCart.filter((imageId) => imageId !== id);
 
-    // Add
-    if (newList.length === likedImages.length) {
-      newList.push(id); // It's ok to mutate newList since we made a copy above.
+  //   // Add
+  //   if (newList.length === shoppingCart.length) {
+  //     newList.push(id); // It's ok to mutate newList since we made a copy above.
+  //   }
+
+  //   this.setState({ shoppingCart: newList });
+  // }
+
+  addToCart(id: string) {
+    const { shoppingCart: shoppingCart } = this.state;
+
+    // const copyOfCart = shoppingCart.filter((imageId) => imageId !== id);
+
+    const copyOfCart = shoppingCart;
+
+    if (copyOfCart.length === shoppingCart.length) {
+      copyOfCart.push(id);
     }
 
-    this.setState({ likedImages: newList });
+    this.setState({ shoppingCart: copyOfCart });
+    console.log(shoppingCart);
   }
 
-  componentDidUpdate() {
-    // Write to LS
-    localStorage.likedImages = JSON.stringify(this.state.likedImages);
-  }
+  // componentDidUpdate() {
+  //   // Write to LS
+  //   localStorage.shoppingCart = JSON.stringify(this.state.shoppingCart);
+  // }
+
+  randomPrice: number = Math.floor(Math.random() * (5000 - 500 + 1)) + 500;
 
   render() {
     return (
       <main>
+        <Link to="shoppingCart">
+          <div className="cart-icon-container">
+            <FontAwesomeIcon className="cart-icon" icon={faShoppingCart} />
+          </div>
+        </Link>
+        {/* <ShoppingCart shoppingCart={this.state.shoppingCart} /> */}
         <div className="main-container">
+          <Outlet />
           {this.state.imagesData.map((imageData) => (
             <SectionCard
-              isLiked={this.state.likedImages.includes(imageData.id)}
               key={imageData.id}
               src={imageData.urls.regular}
               alt={imageData.alt_description}
-              onToggleLiked={() => this.toggleLikedImage(imageData.id)}
+              id={imageData.id}
+              addToCart={() => this.addToCart(imageData.id)}
+              randomPrice={this.randomPrice}
             />
           ))}
         </div>
