@@ -3,7 +3,7 @@ footer {
   background-color: #fce89f;
   display: flex;
   flex-direction: column;
-  height: 5%;
+  height: 3rem;
   align-items: center;
   justify-content: center;
 }

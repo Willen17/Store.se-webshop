@@ -1,7 +1,6 @@
 header {
   text-transform: uppercase;
   background-color: #fce89f;
-  height: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +11,7 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 5rem;
 }
 
 .title {
