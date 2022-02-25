@@ -13,7 +13,7 @@ interface Props {
 }
 
 function SectionCard(props: Props) {
-  const ShoppingCart: string[] = [];
+  const ShoppingCart: ImageData[] = [];
 
   return (
     <div className="davidStyle">
