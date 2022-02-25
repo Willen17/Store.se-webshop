@@ -13,8 +13,6 @@ interface Props {
 }
 
 function SectionCard(props: Props) {
-  const ShoppingCart: string[] = [];
-
   return (
     <div className="davidStyle">
       <div className="product-container">
@@ -29,7 +27,6 @@ function SectionCard(props: Props) {
           <FontAwesomeIcon
             className="add-to-cart"
             icon={faCartPlus}
-            // onClick={addToCart(props.id)}
             onClick={props.addToCart}
           />
         </div>
