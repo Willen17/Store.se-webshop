@@ -7,6 +7,17 @@ header {
 }
 
 
+.cart-icon{
+  font-size: 2rem; 
+    cursor: pointer;
+    margin-right: 2rem;
+    color: #4D5264;
+}
+
+.cart-icon:hover,.title:hover,.logo:hover{
+  color: rgb(213, 213, 213);
+}
+
 .titleContainer {
   display: flex;
   align-items: center;
@@ -40,7 +51,7 @@ header {
   font-size: 1.5rem;
 }
 
-.cart {
+.cart-icon {
   margin-right: 1.5rem;
   font-size: 1.5rem;
 }
@@ -53,13 +64,14 @@ header {
 }
 
 .logo {
-  margin-left: 1.5rem;
+  margin-left: 0.8rem;
   font-size: 1rem;
 }
 
-.cart {
-  margin-right: 1.5rem;
+.cart-icon {
+  margin-right: 0.8rem;
   font-size: 1rem;
 }
 
 }
+

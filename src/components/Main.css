@@ -4,27 +4,6 @@
   justify-content: space-evenly;
 }
 
-.cart-icon-container {
-position: absolute;
-    right: 1.5rem;
-    top: 1.5rem;
-    cursor: pointer;
-    padding: .1rem;
-    color: #4D5264;
-}
-
-
-
-.cart-icon{
-  
-  font-size: 2rem; 
-  
-    
-}
-
-.cart-icon-container:hover{
-  color: rgb(213, 213, 213);
-}
 
 @media (max-width: 1300px) {
   .main {
