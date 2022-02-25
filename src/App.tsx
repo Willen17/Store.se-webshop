@@ -13,12 +13,8 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main />}>
-            <Route
-              path="shoppingCart"
-              element={<ShoppingCart shoppingCart={[]} />}
-            />
-          </Route>
+          <Route path="/" element={<Main />}></Route>
+          <Route path="shoppingCart" element={<ShoppingCart />} />
         </Routes>
       </BrowserRouter>
       <div className="App">

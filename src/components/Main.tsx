@@ -21,7 +21,7 @@ interface ImageData {
 interface Props {}
 interface State {
   imagesData: ImageData[];
-  shoppingCart: string[];
+  shoppingCart: ImageData[];
 }
 
 class Main extends Component<Props, State> {
@@ -42,7 +42,7 @@ class Main extends Component<Props, State> {
 
     // Fetch liked images from LS
     // const shoppingCart = JSON.parse(localStorage.shoppingCart || "[]");
-    const shoppingCart: string[] = [];
+    const shoppingCart: ImageData[] = [];
 
     this.setState({ imagesData, shoppingCart: shoppingCart });
   }
@@ -61,7 +61,7 @@ class Main extends Component<Props, State> {
   //   this.setState({ shoppingCart: newList });
   // }
 
-  addToCart(id: string) {
+  addToCart(imageData: ImageData) {
     const { shoppingCart: shoppingCart } = this.state;
 
     // const copyOfCart = shoppingCart.filter((imageId) => imageId !== id);
@@ -69,7 +69,7 @@ class Main extends Component<Props, State> {
     const copyOfCart = shoppingCart;
 
     if (copyOfCart.length === shoppingCart.length) {
-      copyOfCart.push(id);
+      copyOfCart.push(imageData);
     }
 
     this.setState({ shoppingCart: copyOfCart });
@@ -100,7 +100,7 @@ class Main extends Component<Props, State> {
               src={imageData.urls.regular}
               alt={imageData.alt_description}
               id={imageData.id}
-              addToCart={() => this.addToCart(imageData.id)}
+              addToCart={() => this.addToCart(imageData)}
               randomPrice={this.randomPrice}
             />
           ))}
