@@ -68,9 +68,7 @@ class Main extends Component<Props, State> {
 
     const copyOfCart = shoppingCart;
 
-    if (copyOfCart.length === shoppingCart.length) {
-      copyOfCart.push(imageData);
-    }
+    copyOfCart.push(imageData);
 
     this.setState({ shoppingCart: copyOfCart });
     console.log(shoppingCart);
