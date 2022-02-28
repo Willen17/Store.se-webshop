@@ -22,7 +22,11 @@ function ShoppingCart(props: Props) {
             <li>Total</li>
           </ul>
         </div>
-        <div className="productCard"></div>
+        <div className="productCard">
+          {/* {shoppingCart?.map((product) => (
+            <CartItem key={product.id} product={product} />
+          ))} */}
+        </div>
       </div>
     </div>
   );

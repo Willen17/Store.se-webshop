@@ -9,8 +9,6 @@ import ShoppingCart from "./ShoppingCart";
 import Layout from "./Layout";
 import Store from "./Store";
 
-// Vi vill skicka data (shoppingCart[]) från Main till App, sen från App till ShoppingCart.tsx
-
 function App() {
   return (
     <div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { ProductData, useProducts } from "./Main";
 import SectionCard from "./SectionCard";
@@ -17,7 +17,6 @@ function Store() {
 
   return (
     <div>
-      <p></p>
       {products?.map((product) => (
         <SectionCard
           key={product.id}
