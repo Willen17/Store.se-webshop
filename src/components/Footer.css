@@ -1,6 +1,6 @@
 footer {
   width: 100%;
-  background-color:#FCEE96;
+  background-color: #fcee96;
   display: flex;
   flex-direction: column;
   height: 3rem;
@@ -9,14 +9,13 @@ footer {
 }
 
 h1 {
-  color: #4D5264;
+  color: #4d5264;
   font-size: 1rem;
   font-weight: 500;
 }
 
 @media (max-width: 450px) {
-h1 {
-  font-size: 0.7rem;
-}
-
+  h1 {
+    font-size: 0.7rem;
+  }
 }

@@ -1,33 +1,31 @@
-import { CSSProperties } from "react";
 import "./SectionCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { ProductData } from "./Main";
 
 interface Props {
-  src: string;
-  alt: string;
-  id: string;
-  addToCart: () => void;
-  randomPrice: number;
+  productInfo: ProductData;
+  addToCart: (product: ProductData) => void;
 }
 
 function SectionCard(props: Props) {
   return (
     <div className="davidStyle">
       <div className="product-container">
-        <img className="img" src={props.src} alt={props.alt} />
-        {/* <i
-          onClick={props.onToggleLiked}
-          className={"icon " + (props.isLiked ? "liked" : "")}
-        ></i> */}
+        <img
+          className="img"
+          src={props.productInfo.image}
+          alt={props.productInfo.title}
+        />
+        <h1 className="product-title">{props.productInfo.title}</h1>
+        <p className="card-price">{props.productInfo.price}$</p>
         <div className="icons-container">
           <FontAwesomeIcon className="info-icon" icon={faCircleInfo} />
-          <p className="card-price">{props.randomPrice}:-</p>
           <FontAwesomeIcon
+            onClick={() => props.addToCart(props.productInfo)}
             className="add-to-cart"
             icon={faCartPlus}
-            onClick={props.addToCart}
           />
         </div>
       </div>

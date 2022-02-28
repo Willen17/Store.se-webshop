@@ -22,14 +22,7 @@ function ShoppingCart(props: Props) {
             <li>Total</li>
           </ul>
         </div>
-        <div className="productCard">
-          {/* {props.shoppingCart.length === 0 ? (
-            <p>Inga produkter i varukorgen</p>
-          ) : null}
-          {props.shoppingCart.map((asd) => (
-            <CartItem />
-          ))} */}
-        </div>
+        <div className="productCard"></div>
       </div>
     </div>
   );

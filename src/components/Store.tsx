@@ -1,19 +1,31 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
+import { ProductData, useProducts } from "./Main";
+import SectionCard from "./SectionCard";
 
 function Store() {
-  return (
-    <div>store</div>
+  const { products } = useProducts();
 
-    // {this.state.imagesData.map((imageData) => (
-    //       <SectionCard
-    //         key={imageData.id}
-    //         src={imageData.urls.regular}
-    //         alt={imageData.alt_description}
-    //         id={imageData.id}
-    //         addToCart={() => this.addToCart(imageData)}
-    //         randomPrice={this.randomPrice}
-    //       />
-    //     ))}
+  const [shoppingCart, setShoppingCart] = useState<ProductData[] | null>([]);
+
+  function addToCart(product: ProductData): void {
+    const copyOfCart = shoppingCart;
+    copyOfCart?.push(product);
+    setShoppingCart(copyOfCart);
+    console.log(shoppingCart);
+  }
+
+  return (
+    <div>
+      <p></p>
+      {products?.map((product) => (
+        <SectionCard
+          key={product.id}
+          addToCart={addToCart}
+          productInfo={product}
+        />
+      ))}
+    </div>
   );
 }
 
