@@ -18,9 +18,16 @@
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-bottom: 0.1rem solid gray;
   margin: 2rem 6rem;
+}
+
+.totalprice {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .shopping-cart-header h1 {
@@ -74,4 +81,72 @@
 .productCard {
   display: flex;
   margin-top: 5rem;
+}
+
+.price {
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .shopping-cart-container {
+    width: 50rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .shopping-cart-container {
+    width: 40rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .shopping-cart-container {
+    width: 33rem;
+  }
+
+  .shopping-cart-item {
+    font-size: 0.1rem;
+    margin-left: 0.9rem !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 570px) {
+  .shopping-cart-container {
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .shopping-cart-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .product-img {
+    margin-bottom: 1.5rem;
+  }
+  li {
+    margin-bottom: 1rem;
+  }
+  .product-info-title {
+    width: 100%;
+  }
+
+  .product-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .shopping-cart-container {
+    width: 17rem;
+  }
 }
