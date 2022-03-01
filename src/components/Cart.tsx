@@ -1,9 +1,7 @@
 import { faMinusSquare, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
 import { ProductData } from "../interfaces/Interfaces";
 import "./Cart.css";
-import ErrorBoundary from "./ErrorBoundary";
 
 interface Props {
   cartItems: ProductData[];
