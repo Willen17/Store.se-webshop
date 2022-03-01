@@ -1,20 +1,21 @@
 header {
   text-transform: uppercase;
-  background-color: #FCEE96;
+  background-color: #fcee96;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
-.cart-icon{
-  font-size: 2rem; 
-    cursor: pointer;
-    margin-right: 2rem;
-    color: #4D5264;
+.cart-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 2rem;
+  color: #4d5264;
 }
 
-.cart-icon:hover,.title:hover,.logo:hover{
+.cart-icon:hover,
+.title:hover,
+.logo:hover {
   color: rgb(213, 213, 213);
 }
 
@@ -27,51 +28,47 @@ header {
 }
 
 .title {
-  color: #4D5264;
+  color: #4d5264;
   font-size: 2rem;
   letter-spacing: 0.2rem;
   font-weight: 900;
   cursor: pointer;
 }
 
-
 .logo {
   margin-left: 2rem;
-  color: #4D5264;
+  color: #4d5264;
   font-size: 2rem;
 }
 
 @media (max-width: 580px) {
-.title {
-  font-size: 1.5rem;
-}
+  .title {
+    font-size: 1.5rem;
+  }
 
-.logo {
-  margin-left: 1.5rem;
-  font-size: 1.5rem;
-}
+  .logo {
+    margin-left: 1.5rem;
+    font-size: 1.5rem;
+  }
 
-.cart-icon {
-  margin-right: 1.5rem;
-  font-size: 1.5rem;
-}
-
+  .cart-icon {
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 470px) {
-.title {
-  font-size: 1rem;
-}
+  .title {
+    font-size: 1rem;
+  }
 
-.logo {
-  margin-left: 0.8rem;
-  font-size: 1rem;
-}
+  .logo {
+    margin-left: 0.8rem;
+    font-size: 1rem;
+  }
 
-.cart-icon {
-  margin-right: 0.8rem;
-  font-size: 1rem;
+  .cart-icon {
+    margin-right: 0.8rem;
+    font-size: 1rem;
+  }
 }
-
-}
-
