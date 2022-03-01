@@ -1,19 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import Products from "./Products";
 import "./Main.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ProductData } from "../interfaces/Interfaces";
 import Cart from "./Cart";
 
 function Main() {
-  const [products, setProducts] = useState<ProductData[]>([]);
   const [cartItems, setCartItems] = useState<ProductData[]>([]);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=10")
-      .then((result) => result.json())
-      .then((products) => setProducts(products));
-  }, []);
 
   function handleAddProduct(product: ProductData) {
     const productExists = cartItems.find((item) => item.id === product.id);
@@ -32,20 +25,23 @@ function Main() {
     }
   }
 
-  //   function handleRemoveProduct(product: ProductData) {
-  //     const productExists = cartItems.find((item) => item.id === product.id);
-  //     if (productExists?.quantity === 1) {
-  //       setCartItems(cartItems.filter((item) => item.id !== product.id));
-  //     } else {
-  //       setCartItems(
-  //         cartItems.map((item) =>
-  //           item.id === product.id
-  //             ? { ...productExists, quantity: productExists.quantity - 1 }
-  //             : item
-  //         )
-  //       );
-  //     }
-  //   }
+  function handleRemoveProduct(product: ProductData) {
+    const productExists = cartItems.find((item) => item.id === product.id);
+    if (!productExists) return;
+
+    if (productExists.quantity === 1) {
+      setCartItems(cartItems.filter((item) => item.id !== product.id));
+    } else {
+      setCartItems(
+        cartItems.map((item) => {
+          if (item.id === product.id) {
+            return { ...productExists, quantity: productExists.quantity - 1 };
+          }
+          return item;
+        })
+      );
+    }
+  }
 
   return (
     <main>
@@ -53,17 +49,16 @@ function Main() {
         <Routes>
           <Route
             path="/"
-            element={
-              <Products
-                handleAddProduct={handleAddProduct}
-                productItems={products}
-              />
-            }
+            element={<Products onAddProduct={handleAddProduct} />}
           />
           <Route
             path="/cart"
             element={
-              <Cart handleAddProduct={handleAddProduct} cartItems={cartItems} />
+              <Cart
+                onAddProduct={handleAddProduct}
+                onRemoveProduct={handleRemoveProduct}
+                cartItems={cartItems}
+              />
             }
           />
         </Routes>
