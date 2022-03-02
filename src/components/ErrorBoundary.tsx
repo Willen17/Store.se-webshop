@@ -1,4 +1,7 @@
-import React, { ErrorInfo } from "react";
+import { faBug } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { CSSProperties, ErrorInfo } from "react";
+import "./ErrorBoundary.css";
 
 interface Props {}
 
@@ -22,7 +25,12 @@ class ErrorBoundary extends React.Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      return <h1>Sorry... There was an error.</h1>;
+      return (
+        <div className="error">
+          <h1>Sorry... There was an error.</h1>
+          <FontAwesomeIcon icon={faBug} />
+        </div>
+      );
     }
     return this.props.children;
   }

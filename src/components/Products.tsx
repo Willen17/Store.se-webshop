@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ProductData } from "../interfaces/Interfaces";
+import ErrorBoundary from "./ErrorBoundary";
 import ProductCard from "./ProductCard";
 import "./Products.css";
 import Skeleton from "./Skeleton";
@@ -12,14 +13,12 @@ function Products(props: Props) {
   const [products, setProducts] = useState<ProductData[]>();
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=10")
+    fetch("https://fakestoreapi.com/products")
       .then((result) => result.json())
       .then((products) => setProducts(products));
   }, []);
 
   if (products == null) {
-    // ["a", "b", "c", "d", "e"].map((id: string) => (
-    // return [1, 2, 3, 4, 5, 6, 7, 8, 9].map(() => <div className="skeleton" />);
     return (
       <div>
         <Skeleton />
@@ -28,13 +27,15 @@ function Products(props: Props) {
   } else {
     return (
       <div>
-        {products.map((product) => (
-          <ProductCard
-            handleAddProduct={props.onAddProduct}
-            key={product.id}
-            productItem={product}
-          />
-        ))}
+        <ErrorBoundary>
+          {products.map((product) => (
+            <ProductCard
+              handleAddProduct={props.onAddProduct}
+              key={product.id}
+              productItem={product}
+            />
+          ))}
+        </ErrorBoundary>
       </div>
     );
   }

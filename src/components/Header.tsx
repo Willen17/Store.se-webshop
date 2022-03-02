@@ -12,7 +12,7 @@ function Header() {
       </Link>
       <div className="titleContainer">
         <Link style={linkStyle} to="/">
-          <h1 className="title linkStyle">AliBaba.se</h1>
+          <h1 className="title linkStyle">store.se</h1>
         </Link>
       </div>
       <Link to="/cart">

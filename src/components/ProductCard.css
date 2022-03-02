@@ -1,6 +1,7 @@
 .product-title {
   font-size: 1rem;
   margin: 1rem;
+  color: #151515;
 }
 
 .icon {
@@ -9,7 +10,7 @@
   bottom: 1rem;
   text-shadow: 0 0 0.1rem black;
   font-size: 4rem;
-  color: white;
+  color: #e8e9eb;
   font-weight: bold;
   cursor: pointer;
 }
@@ -19,7 +20,7 @@
   align-items: center;
   justify-content: center;
   margin: 1rem;
-  background-color: beige;
+  background-color: #ececec;
   border-radius: 0.5rem;
   width: 600px;
 }
@@ -46,23 +47,34 @@
   align-items: center;
 }
 
-.rightContainer {
-  width: 20rem;
-}
-
 .icons-container {
   display: flex;
   flex-direction: column;
   width: 50%;
   margin: 1rem 0;
+  animation: bounce 1s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .add-to-cart {
   margin: 0.5rem 0rem;
   padding: 1rem;
   font-size: 2rem;
-  background-color: #43962a;
-  color: white;
+  background-color: #313638;
+  color: #e8e9eb;
   cursor: pointer;
   border-radius: 0.2rem;
   transition: all 0.2s ease-in-out;
@@ -73,41 +85,24 @@
   transform: scale(1.1);
 }
 
-.info-icon {
-  margin: 0.5rem 0rem;
-  padding: 1rem;
-  font-size: 2rem;
-  background-color: #72a7cf;
-  color: white;
-  cursor: pointer;
-  border-radius: 0.2rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.info-icon:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transform: scale(1.1);
-}
-
 .card-price {
   display: inline-block;
 
   width: auto;
   height: 38px;
 
-  background-color: #6ab070;
+  background-color: #313638;
   -webkit-border-radius: 3px 4px 4px 3px;
   -moz-border-radius: 3px 4px 4px 3px;
   border-radius: 3px 4px 4px 3px;
 
-  border-left: 1px solid #6ab070;
+  border-left: 1px solid #313638;
 
-  /* This makes room for the triangle */
   margin-left: 19px;
 
   position: relative;
 
-  color: white;
+  color: #e8e9eb;
   font-weight: 300;
   font-size: 22px;
   line-height: 38px;
@@ -115,7 +110,6 @@
   padding: 0 10px 0 10px;
 }
 
-/* Makes the triangle */
 .card-price:before {
   content: "";
   position: absolute;
@@ -125,10 +119,9 @@
   height: 0;
   border-top: 19px solid transparent;
   border-bottom: 19px solid transparent;
-  border-right: 19px solid #6ab070;
+  border-right: 19px solid #313638;
 }
 
-/* Makes the circle */
 .card-price:after {
   content: "";
   background-color: white;

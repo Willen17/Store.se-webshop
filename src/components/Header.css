@@ -1,22 +1,26 @@
 header {
   text-transform: uppercase;
-  background-color: #fcee96;
+  background-color: #313638;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .cart-icon {
   font-size: 2rem;
   cursor: pointer;
   margin-right: 2rem;
-  color: #4d5264;
+  color: #e8e9eb;
 }
 
 .cart-icon:hover,
 .title:hover,
 .logo:hover {
-  color: rgb(213, 213, 213);
+  color: rgb(179, 177, 177);
 }
 
 .titleContainer {
@@ -28,7 +32,7 @@ header {
 }
 
 .title {
-  color: #4d5264;
+  color: #e8e9eb;
   font-size: 2rem;
   letter-spacing: 0.2rem;
   font-weight: 900;
@@ -37,7 +41,7 @@ header {
 
 .logo {
   margin-left: 2rem;
-  color: #4d5264;
+  color: #e8e9eb;
   font-size: 2rem;
 }
 

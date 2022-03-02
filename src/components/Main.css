@@ -1,30 +1,14 @@
-.main {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-@media (max-width: 1300px) {
-  .main {
-    flex-direction: row;
-    height: auto;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-  }
+main {
+  padding-top: 3rem;
 }
 
 .main-container {
+  min-height: calc(100vh - 11rem);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   padding-top: 3rem;
-  background: rgb(252, 238, 150);
-  background: radial-gradient(
-    circle,
-    rgba(252, 238, 150, 1) 19%,
-    rgba(126, 182, 215, 1) 100%
-  );
+  background: #313638;
 }
 
 @media (max-width: 540px) {

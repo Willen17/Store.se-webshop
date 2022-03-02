@@ -4,6 +4,7 @@ import "./Main.css";
 import { useState } from "react";
 import { ProductData } from "../interfaces/Interfaces";
 import Cart from "./Cart";
+import ErrorBoundary from "./ErrorBoundary";
 
 function Main() {
   const [cartItems, setCartItems] = useState<ProductData[]>([]);
@@ -54,11 +55,13 @@ function Main() {
           <Route
             path="/cart"
             element={
-              <Cart
-                onAddProduct={handleAddProduct}
-                onRemoveProduct={handleRemoveProduct}
-                cartItems={cartItems}
-              />
+              <ErrorBoundary>
+                <Cart
+                  onAddProduct={handleAddProduct}
+                  onRemoveProduct={handleRemoveProduct}
+                  cartItems={cartItems}
+                />
+              </ErrorBoundary>
             }
           />
         </Routes>

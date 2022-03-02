@@ -1,6 +1,8 @@
-import { faCircleInfo, faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { error } from "console";
 import { ProductData } from "../interfaces/Interfaces";
+import ErrorBoundary from "./ErrorBoundary";
 import "./ProductCard.css";
 
 interface Props {
@@ -10,6 +12,7 @@ interface Props {
 
 function ProductCard(props: Props) {
   const productItem = props.productItem;
+
   return (
     <div className="davidStyle">
       <div className="product-container">
@@ -17,8 +20,6 @@ function ProductCard(props: Props) {
         <h1 className="product-title">{productItem.title}</h1>
         <p className="card-price">{productItem.price}$</p>
         <div className="icons-container">
-          <FontAwesomeIcon className="info-icon" icon={faCircleInfo} />
-          {}
           <FontAwesomeIcon
             className="add-to-cart"
             icon={faCartPlus}
