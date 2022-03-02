@@ -36,7 +36,7 @@ function Cart(props: Props) {
             <ul className="product-info">
               <li>{cartItem.quantity}</li>
               <li>{cartItem.price} $</li>
-              <li>{cartItem.price * cartItem.quantity} $</li>
+              <li>{Math.round(cartItem.price * cartItem.quantity)} $</li>
             </ul>
             <div className="cart-icons-container">
               <FontAwesomeIcon
