@@ -1,3 +1,4 @@
+import { FontawesomeObject } from "@fortawesome/fontawesome-svg-core";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { error } from "console";
@@ -13,6 +14,21 @@ interface Props {
 function ProductCard(props: Props) {
   const productItem = props.productItem;
 
+  function addedToCart(productItem: ProductData) {
+    props.handleAddProduct(productItem);
+    addToCartAnimation();
+  }
+
+  function addToCartAnimation() {
+    if (document.querySelector(".add-to-cart-animation")) {
+      document.querySelector(".add-to-cart-animation")?.remove();
+    }
+    const newElement = document.createElement("p");
+    newElement.innerText = "📦";
+    newElement.classList.add("add-to-cart-animation");
+    document.querySelector(".Header")?.appendChild(newElement);
+  }
+
   return (
     <div className="davidStyle">
       <div className="product-container">
@@ -23,7 +39,7 @@ function ProductCard(props: Props) {
           <FontAwesomeIcon
             className="add-to-cart"
             icon={faCartPlus}
-            onClick={() => props.handleAddProduct(productItem)}
+            onClick={() => addedToCart(productItem)}
           />
         </div>
       </div>
