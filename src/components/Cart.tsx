@@ -21,16 +21,7 @@ function Cart(props: Props) {
         <div className="shopping-cart-header">
           <h1>Varukorg</h1>
         </div>
-        <div className="shopping-cart-item">
-          {/* <ul className="product-info-title">
-            <li style={{ fontWeight: "bold" }}>Produkter</li>
-          </ul> */}
-          {/* <ul className="product-info">
-            <li style={{ fontWeight: "bold" }}>Antal</li>
-            <li style={{ fontWeight: "bold" }}>Pris</li>
-          </ul> */}
-        </div>
-
+        <div className="shopping-cart-item"></div>
         {props.cartItems.map((cartItem) => (
           <div key={cartItem.id} className="shopping-cart-item">
             <img
