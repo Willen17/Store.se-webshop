@@ -1,9 +1,6 @@
-import { FontawesomeObject } from "@fortawesome/fontawesome-svg-core";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { error } from "console";
 import { ProductData } from "../interfaces/Interfaces";
-import ErrorBoundary from "./ErrorBoundary";
 import "./ProductCard.css";
 
 interface Props {

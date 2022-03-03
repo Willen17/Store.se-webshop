@@ -1,6 +1,6 @@
 import { faBug } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { CSSProperties, ErrorInfo } from "react";
+import React, { ErrorInfo } from "react";
 import "./ErrorBoundary.css";
 
 interface Props {}
