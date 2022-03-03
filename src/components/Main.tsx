@@ -64,6 +64,15 @@ function Main() {
               </ErrorBoundary>
             }
           />
+          <Route
+            path="*"
+            element={
+              <div className="page404">
+                <h1>Error 404</h1>
+                <p>Sorry, but this page doesnt exist 💩</p>
+              </div>
+            }
+          />
         </Routes>
       </div>
     </main>
